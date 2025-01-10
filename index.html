@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dead Countdown</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Notification Div -->
+        <div id="notification" class="notification"></div>
+
+        <h1>Dead Countdown</h1>
+        <input type="date" id="birthdayInput" required>
+        <div class="checkbox-container">
+            <input type="checkbox" id="agreeCheckbox" required>
+            <label for="agreeCheckbox">I agree to the <a href="#" target="_blank">terms and conditions</a>.</label>
+        </div>
+        <button onclick="startCountdown()">Start Countdown</button>
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>

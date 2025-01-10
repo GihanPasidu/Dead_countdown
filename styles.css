@@ -1,0 +1,143 @@
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #630000;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    /* Prevent scrollbars */
+}
+
+.container {
+    background-color: #070707;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    text-shadow: 0 0 10px #ff0000;
+}
+
+input,
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    border: 2px solid #ff0000;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+label {
+    color: #fff;
+}
+
+a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#countdownDisplay {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+    color: #ff0000;
+}
+
+#countdownDisplay div {
+    color: #ff0000;
+}
+
+#message {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+.notification.show {
+    display: block;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.water-ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0);
+    animation: water-ripple-animation 1s linear;
+}
+
+@keyframes water-ripple-animation {
+    to {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
