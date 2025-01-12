@@ -1,6 +1,7 @@
 body {
     font-family: 'Orbitron', sans-serif;
-    background-color: #630000;
+    background-color: #000;
+    /* Changed from #630000 to #000 */
     color: #fff;
     text-align: center;
     display: flex;
@@ -13,7 +14,8 @@ body {
 }
 
 .container {
-    background-color: #070707;
+    background-color: rgba(7, 7, 7, 0.8);
+    /* Added transparency */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -139,5 +141,55 @@ a:hover {
     to {
         transform: scale(10);
         opacity: 0;
+    }
+}
+
+
+/* Horror background animation */
+
+.horror-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('horror-background.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.5;
+    /* Increased from 0.2 to 0.5 */
+    z-index: -1;
+    animation: horrorAnimation 10s infinite alternate;
+}
+
+@keyframes horrorAnimation {
+    0% {
+        opacity: 0.5;
+        /* Increased from 0.2 to 0.5 */
+    }
+    100% {
+        opacity: 0.8;
+        /* Increased from 0.5 to 0.8 */
+    }
+}
+
+.fog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('fog.png') repeat;
+    opacity: 0.3;
+    /* Increased from 0.1 to 0.3 */
+    z-index: -1;
+    animation: fogAnimation 20s infinite linear;
+}
+
+@keyframes fogAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }

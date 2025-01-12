@@ -6,7 +6,7 @@ function showNotification(message) {
     // Hide the notification after 3 seconds
     setTimeout(function() {
         notification.classList.remove('show');
-    }, 2000);
+    }, 3000); // Changed from 2000 to 3000
 }
 
 function startCountdown() {
