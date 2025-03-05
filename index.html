@@ -18,27 +18,25 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            document.body.addEventListener('click', function initAudio() {
-                if (player) {
+            let audioInitialized = false;
+            document.body.addEventListener('click', function() {
+                if (!audioInitialized && player) {
                     player.playVideo();
                     player.unMute();
-                    document.body.removeEventListener('click', initAudio);
+                    audioInitialized = true;
                 }
-            }, { once: true });
+            });
         });
     </script>
 </head>
 
 <body>
+    <canvas id="bgCanvas" style="position: fixed; top: 0; left: 0; z-index: -2;"></canvas>
     <div class="main-wrapper" style="display: flex; flex-direction: column; align-items: center; min-height: 100vh;">
-        <div id="youtube-audio"></div>
+        <div id="youtube-audio" style="display: none;"></div>
         <div class="blood-drip"></div>
         <div class="smoke-overlay"></div>
-        <iframe id="background-music" 
-                src="https://www.youtube.com/embed/lDNGlG71AR8?autoplay=1&loop=1&controls=0&showinfo=0&modestbranding=1&playlist=lDNGlG71AR8" 
-                allow="autoplay" 
-                style="display:none">
-        </iframe>
+        <iframe id="background-music" style="display:none; pointer-events: none;" allow="autoplay"></iframe>
         <div class="container" style="text-align: center;">
             <!-- Notification Div -->
             <div id="notification" class="notification"></div>
@@ -57,6 +55,7 @@
             <p>&copy; 2024 Dead Countdown. Made by Pasidu</p>
         </footer>
     </div>
+    <script src="background.js"></script>
 </body>
 
 </html>

@@ -5,11 +5,11 @@ function onYouTubeIframeAPIReady() {
     if (player) return;
     
     player = new YT.Player('youtube-audio', {
-        height: '1',
-        width: '1',
+        height: '0',
+        width: '0',
         videoId: 'lDNGlG71AR8',
         playerVars: {
-            'autoplay': 1,
+            'autoplay': 0,
             'loop': 1,
             'playlist': 'lDNGlG71AR8',
             'controls': 0,
@@ -22,8 +22,7 @@ function onYouTubeIframeAPIReady() {
         },
         events: {
             'onReady': (event) => {
-                event.target.setVolume(10);
-                localStorage.setItem('audioInitialized', 'true');
+                event.target.setVolume(30);
             },
             'onStateChange': (event) => {
                 if (event.data === YT.PlayerState.ENDED) {
