@@ -8,13 +8,32 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="audio.js"></script>
+    <script>
+        window.onload = function() {
+            if (player) {
+                player.playVideo();
+                player.unMute();
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.addEventListener('click', function initAudio() {
+                if (player) {
+                    player.playVideo();
+                    player.unMute();
+                    document.body.removeEventListener('click', initAudio);
+                }
+            }, { once: true });
+        });
+    </script>
 </head>
 
 <body>
     <div class="main-wrapper" style="display: flex; flex-direction: column; align-items: center; min-height: 100vh;">
+        <div id="youtube-audio"></div>
         <div class="blood-drip"></div>
         <div class="smoke-overlay"></div>
-        <div id="youtube-audio"></div>
         <iframe id="background-music" 
                 src="https://www.youtube.com/embed/lDNGlG71AR8?autoplay=1&loop=1&controls=0&showinfo=0&modestbranding=1&playlist=lDNGlG71AR8" 
                 allow="autoplay" 

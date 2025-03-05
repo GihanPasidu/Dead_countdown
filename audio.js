@@ -1,6 +1,9 @@
 let player;
 
 function onYouTubeIframeAPIReady() {
+    // Check if player already exists
+    if (player) return;
+    
     player = new YT.Player('youtube-audio', {
         height: '1',
         width: '1',
@@ -15,13 +18,12 @@ function onYouTubeIframeAPIReady() {
             'fs': 0,
             'rel': 0,
             'disablekb': 1,
-            'mute': 0
+            'mute': 1  // Start muted
         },
         events: {
             'onReady': (event) => {
-                event.target.unMute();
                 event.target.setVolume(10);
-                event.target.playVideo();
+                localStorage.setItem('audioInitialized', 'true');
             },
             'onStateChange': (event) => {
                 if (event.data === YT.PlayerState.ENDED) {
@@ -30,4 +32,11 @@ function onYouTubeIframeAPIReady() {
             }
         }
     });
+}
+
+// Add function to check audio state
+function resumeAudio() {
+    if (player && sessionStorage.getItem('audioPlaying') === 'true') {
+        player.playVideo();
+    }
 }
