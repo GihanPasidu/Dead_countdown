@@ -1,6 +1,6 @@
 body {
     font-family: 'Orbitron', sans-serif;
-    background-color: #000;
+    background-color: #ff0000;
     /* Changed from #630000 to #000 */
     color: #fff;
     text-align: center;
@@ -14,10 +14,10 @@ body {
 }
 
 .container {
-    background-color: rgba(7, 7, 7, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     /* Added transparency */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     padding: 20px;
     max-width: 400px;
     width: 100%;
@@ -86,7 +86,7 @@ a:hover {
     left: 50%;
     transform: translateX(-50%);
     padding: 15px;
-    background-color: #ff0000;
+    background-color: #490000;
     color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
@@ -96,41 +96,7 @@ a:hover {
 
 .notification.show {
     display: block;
-    animation: fadeInOut 3s ease-in-out;
 }
-
-@keyframes fadeInOut {
-    0% {
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-.ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(0);
-    animation: ripple-animation 0.6s linear;
-}
-
-@keyframes ripple-animation {
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
-
-/* Remove horror-overlay and fog-overlay styles */
 
 .smoke-overlay {
     position: fixed;
@@ -141,20 +107,4 @@ a:hover {
     background: url('smoke.png') repeat;
     opacity: 0.4;
     z-index: -1;
-    animation: smokeAnimation 20s infinite;
-}
-
-@keyframes smokeAnimation {
-    0% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.4;
-    }
-    50% {
-        transform: translate(-10%, -10%) scale(1.2);
-        opacity: 0.6;
-    }
-    100% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.4;
-    }
 }

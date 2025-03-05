@@ -64,32 +64,3 @@ function startCountdown() {
 function isLeapYear(year) {
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
-
-document.addEventListener('mousemove', function(e) {
-    createRipple(e.pageX, e.pageY);
-    createWaterRipple(e.pageX, e.pageY);
-});
-
-function createRipple(x, y) {
-    var ripple = document.createElement('div');
-    ripple.className = 'ripple';
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
-    document.body.appendChild(ripple);
-
-    setTimeout(function() {
-        ripple.remove();
-    }, 600); // Match the duration of the ripple animation
-}
-
-function createWaterRipple(x, y) {
-    var ripple = document.createElement('div');
-    ripple.className = 'water-ripple';
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
-    document.body.appendChild(ripple);
-
-    setTimeout(function() {
-        ripple.remove();
-    }, 1000); // Match the duration of the water ripple animation
-}
