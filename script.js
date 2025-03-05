@@ -35,7 +35,7 @@ function startCountdown() {
     }
 
     // Generate a random number of years between 0 and 80
-    var randomYears = Math.floor(Math.random() * 80); // 0 to 79 years
+    var randomYears = Math.floor(Math.random() * 50); // 0 to 79 years
     var randomSeconds = Math.floor(Math.random() * 60); // 0 to 59 seconds
 
     // Set the target date
