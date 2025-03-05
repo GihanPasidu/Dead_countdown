@@ -6,11 +6,19 @@
     <title>Date Countdown</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="audio.js"></script>
 </head>
 
 <body>
     <div class="blood-drip"></div>
     <div class="smoke-overlay"></div>
+    <div id="youtube-audio"></div>
+    <iframe id="background-music" 
+            src="https://www.youtube.com/embed/lDNGlG71AR8?autoplay=1&loop=1&controls=0&showinfo=0&modestbranding=1&playlist=lDNGlG71AR8" 
+            allow="autoplay" 
+            style="display:none">
+    </iframe>
     <div class="container">
         <!-- Notification Div -->
         <div id="notification" class="notification"></div>
