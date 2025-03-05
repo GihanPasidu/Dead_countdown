@@ -7,9 +7,7 @@ function updateCountdown(targetDate) {
     if (difference <= 0) {
         clearInterval(countdownInterval);
         document.getElementById('countdownDisplay').innerHTML = '';
-        document.getElementById('message').innerHTML = '<span style="color: #ff0000; font-size: 36px;">Your are Dead</span>';
-        var endSound = document.getElementById('endSound');
-        endSound.play();
+        document.getElementById('message').innerHTML = '';
         return;
     }
 
